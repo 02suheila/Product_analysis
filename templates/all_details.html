@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Analysis</title>
+         <!-- Bootstrap CSS -->
+         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+         
+         <link href="{% static 'css/internal.css' %}" rel="stylesheet">
+
+       
+
+    
+    </head>
+    <body>
+            <h1>Product Data Analysis Across All Platforms</h1>
+            <br>
+            <form class="search" method="GET" action="{% url 'all_details' %}">   
+                <input type="text" name="search" placeholder="Search..." aria-label="Search">
+                <button type="submit">SEARCH</button>
+            </form>
+            <BR>
+            <a class="go--" href="{% url 'index' %}"> GO BACK </a>
+               
+            
+            <table class="table table-success">
+                
+                    <thead>
+                      <tr>
+                        <th scope="col">S.NO</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Orders</th>
+                        <th scope="col">Returns</th>
+                        <th scope="col">Deliveries</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for items in aggregated_data %}
+                        <tr class="table-row">
+                          
+                          <th scope="row">{{ forloop.counter }}</th>  <!-- Automatically counts the rows -->
+                          <td>{{ items.name }}</td>
+                          <td>{{ items.email }}</td>
+                          <td>{{ items.platforms|join:", " }}</td>
+                          
+                          <td>{{ items.orders }}</td>
+                          <td>{{ items.returns }}</td>
+                          <td>{{ items.deliveries }}</td>
+                        </tr>
+                      {% empty %}
+                        <tr>
+                          <td colspan="7">No data available</td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                  
+        </body>
+        </html>
+        

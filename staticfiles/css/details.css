@@ -1,0 +1,58 @@
+.table-row:hover {
+    background-color: #d4edda; /* Success background color */
+    color: #155724; /* Success text color */
+}
+h1 {
+    color: green;
+    text-align: center;
+}
+.go {
+    position: absolute;
+    top: 20px; /* Adjust the distance from the top */
+    right: 20px; /* Adjust the distance from the right */
+    background-color: green; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Button padding */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.go:hover {
+    background-color: #d3d9df; /* Darker blue on hover */
+}
+
+.search-form {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search-form input[type="text"] {
+        width: 300px;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+.search-form input[type="text"]:focus {
+        border-color: green;
+        outline: none;
+    }
+
+.search-form button {
+        margin-left: 10px;
+        padding: 10px 20px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+.search-form button:hover {
+        background-color: green;
+    }
+
